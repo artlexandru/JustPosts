@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %} 
+<title>Posts</title>
+{% endblock %}
+
+{% block body %}
+
+    <h1 class="pb-4 display-1" style="text-align: center;">All Posts</h1>
+    <a class="d-inline float-right btn btn-lg btn-primary" href ="/newpost"> + New Post</a>
+
+    {% for post in posts %}
+
+
+        <div class="card text-dark bg-light mb-3 p-4" style="max-width: 100rem;">
+            <div class="card-header" style="color: rgb(154, 153, 153);"><small> Written by: <b>{{ post.author }}</b> on {{ post.date_posted }} </small></div>
+            <div class="card-body">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text" style="white-space:pre-wrap">{{ post.content }}</p>
+                <a class="btn btn-sm btn-outline-primary" href="/posts/edit/{{post.id}}">Edit</a>
+                <a class="btn btn-sm btn-outline-danger" href="/posts/delete/{{post.id}}">Delete</a>
+            </div>
+        </div>
+
+        
+       
+    {% endfor %}
+
+{% endblock %}

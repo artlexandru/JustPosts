@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head %} 
+<title>New Post</title>
+{% endblock %}
+
+{% block body %}
+
+
+
+    <h2 class="pb-5 display-3"> Create New Blog Post</h2>
+
+
+    <form class="" action="/posts" method="POST">
+        <label for="title" class="form-label">Title</label>
+        <input class="form-control" type="text" name="title" id="title">
+        <br>
+        <label for="author" class="form-label">Author</label>
+        <input class="form-control" type="text" name="author" id="author">
+        <br>
+        <div class="form-floating">
+            <textarea class="form-control" name="content" placeholder="Write a post..." id="content" style="height: 100px"></textarea>
+            <label for="content">Write a post...</label>
+        </div>
+        <br>
+        <div class="d-grid gap-2 col-2 mb-4">
+            <input class="btn btn-success" type="submit" value="Post">
+         
+        </div>
+    </form>
+        
+
+
+    
+
+    
+
+{% endblock %}
