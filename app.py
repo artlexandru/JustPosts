@@ -16,6 +16,9 @@ class BlogPost(db.Model):
     def __repr__(self):
         return "Blog post" + str(self.id)
 
+@app.route ("/")
+def goposts():
+    return redirect ("/posts")    
 
 @app.route("/posts", methods=["GET", "POST"])
 def posts():
